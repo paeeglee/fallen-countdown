@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Obrigado, Professor — Contagem Regressiva | 31.12.2026</title>
+<meta name="description" content="Tributo a Gabriel 'FalleN' Toledo. Contagem regressiva até a aposentadoria oficial — 31 de dezembro de 2026." />
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700&family=Archivo+Black&display=swap" rel="stylesheet">
+
+<!--
+  GOOGLE ADSENSE — escolhido sobre o Meta Ads por dois motivos:
+  1) Tráfego esperado é majoritariamente orgânico (SEO + buscas tipo "quanto falta para o Fallen se aposentar")
+  2) Display ads contextual + AdSense é o caminho padrão para sites de conteúdo
+  Substitua data-ad-client e data-ad-slot pelos seus IDs reais ao publicar.
+-->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+
+<style>
+  /* ---------- TOKENS ---------- */
+  :root {
+    --bg: #0a0a0c;
+    --bg-2: #111116;
+    --bg-3: #1a1a22;
+    --line: rgba(255,255,255,0.08);
+    --line-strong: rgba(255,255,255,0.18);
+    --fg: #f4f4f5;
+    --fg-dim: #a8a8b0;
+    --fg-mute: #6b6b75;
+    --accent: #e7c547;          /* dourado / amarelo capacete */
+    --accent-2: #ff3b30;        /* vermelho intenso */
+    --accent-3: #00d18f;        /* verde "rating positivo" */
+    --grid: rgba(231,197,71,0.06);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: var(--bg); color: var(--fg); font-family: 'Inter', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  body { overflow-x: hidden; }
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+
+  ::selection { background: var(--accent); color: #000; }
+
+  /* ---------- SHARED ---------- */
+  .container { width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+  .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--fg-dim);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .eyebrow::before {
+    content: "";
+    width: 24px;
+    height: 1px;
+    background: var(--accent);
+  }
+  .h1 {
+    font-family: 'Archivo Black', 'Bebas Neue', sans-serif;
+    font-weight: 900;
+    font-size: clamp(40px, 7vw, 96px);
+    line-height: 0.92;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+  }
+  .h2 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(28px, 4vw, 56px);
+    line-height: 1;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+  }
+  .mono { font-family: 'JetBrains Mono', monospace; }
+
+  /* ---------- HEADER ---------- */
+  header.nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 50;
+    backdrop-filter: blur(14px);
+    background: rgba(10,10,12,0.6);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    height: 64px;
+  }
+  .brand {
+    display: flex; align-items: center; gap: 12px;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 16px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .brand-mark {
+    width: 28px; height: 28px;
+    border: 2px solid var(--accent);
+    display: grid; place-items: center;
+    color: var(--accent);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px; font-weight: 700;
+    transform: rotate(45deg);
+  }
+  .brand-mark span { transform: rotate(-45deg); }
+  .nav-links { display: flex; gap: 32px; }
+  .nav-links a {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--fg-dim);
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--accent); }
+  .nav-cta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--fg);
+    padding: 8px 14px;
+    border: 1px solid var(--line-strong);
+  }
+  .nav-cta::before { content: "● "; color: var(--accent-2); }
+  @media (max-width: 720px) {
+    .nav-links { display: none; }
+  }
+
+  /* ---------- HERO ---------- */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    padding: 120px 0 80px;
+    overflow: hidden;
+    background:
+      radial-gradient(ellipse 80% 50% at 50% 0%, rgba(231,197,71,0.08), transparent 60%),
+      radial-gradient(ellipse 60% 40% at 80% 100%, rgba(255,59,48,0.06), transparent 60%),
+      var(--bg);
+  }
+  .hero::before {
+    content: "";
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(var(--grid) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+    background-size: 64px 64px;
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, #000 30%, transparent 80%);
+    pointer-events: none;
+  }
+  .hero-grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+  @media (max-width: 980px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 32px; }
+  }
+
+  .hero-tag {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+  .hero-tag-pulse {
+    width: 8px; height: 8px;
+    background: var(--accent-2);
+    border-radius: 50%;
+    box-shadow: 0 0 0 0 rgba(255,59,48,0.6);
+    animation: pulse 1.6s infinite;
+  }
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(255,59,48,0.7); }
+    70% { box-shadow: 0 0 0 12px rgba(255,59,48,0); }
+    100% { box-shadow: 0 0 0 0 rgba(255,59,48,0); }
+  }
+  .hero-tag span {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--fg-dim);
+  }
+
+  .hero-title {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(56px, 11vw, 160px);
+    line-height: 0.85;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+  }
+  .hero-title .stroke {
+    -webkit-text-stroke: 2px var(--fg);
+    color: transparent;
+  }
+  .hero-title .accent { color: var(--accent); }
+  .hero-sub {
+    margin-top: 20px;
+    max-width: 460px;
+    color: var(--fg-dim);
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  /* COUNTDOWN */
+  .countdown-wrap {
+    position: relative;
+    padding: 28px;
+    border: 1px solid var(--line-strong);
+    background:
+      linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0)),
+      var(--bg-2);
+  }
+  .countdown-wrap::before,
+  .countdown-wrap::after {
+    content: "";
+    position: absolute;
+    width: 14px; height: 14px;
+    border: 2px solid var(--accent);
+  }
+  .countdown-wrap::before { top: -2px; left: -2px; border-right: 0; border-bottom: 0; }
+  .countdown-wrap::after { bottom: -2px; right: -2px; border-left: 0; border-top: 0; }
+
+  .countdown-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  .countdown-label-l {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--fg-dim);
+  }
+  .countdown-target {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    color: var(--accent);
+  }
+
+  .countdown {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+  }
+  .cd-cell {
+    position: relative;
+    background: var(--bg);
+    border: 1px solid var(--line);
+    padding: 18px 12px 14px;
+    text-align: center;
+    overflow: hidden;
+  }
+  .cd-cell::before {
+    content: "";
+    position: absolute; left: 0; right: 0; top: 0;
+    height: 2px; background: var(--accent);
+    transform: scaleX(0); transform-origin: left;
+    animation: tick 1s linear infinite;
+  }
+  @keyframes tick {
+    0% { transform: scaleX(0); }
+    100% { transform: scaleX(1); }
+  }
+  .cd-cell:nth-child(1)::before { animation-duration: 86400s; }
+  .cd-cell:nth-child(2)::before { animation-duration: 3600s; }
+  .cd-cell:nth-child(3)::before { animation-duration: 60s; }
+  .cd-cell:nth-child(4)::before { animation-duration: 1s; }
+
+  .cd-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    font-size: clamp(28px, 5vw, 56px);
+    color: var(--fg);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.04em;
+    line-height: 1;
+  }
+  .cd-lab {
+    margin-top: 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--fg-mute);
+  }
+
+  .countdown-foot {
+    margin-top: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--fg-mute);
+    letter-spacing: 0.12em;
+  }
+
+  /* HERO PORTRAIT */
+  .portrait {
+    position: relative;
+    aspect-ratio: 4/5;
+    background: var(--bg-2);
+    border: 1px solid var(--line);
+    overflow: hidden;
+  }
+  .portrait-bg {
+    position: absolute; inset: 0;
+    background:
+      repeating-linear-gradient(45deg, transparent 0 16px, rgba(231,197,71,0.05) 16px 17px),
+      linear-gradient(180deg, var(--bg-3) 0%, var(--bg-2) 100%);
+  }
+  .portrait-name {
+    position: absolute;
+    right: -8px; top: 50%;
+    transform: translateY(-50%) rotate(90deg);
+    transform-origin: center;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(80px, 12vw, 180px);
+    line-height: 0.85;
+    color: rgba(255,255,255,0.04);
+    letter-spacing: -0.04em;
+    white-space: nowrap;
+    pointer-events: none;
+  }
+  .portrait-content {
+    position: absolute;
+    inset: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .portrait-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .portrait-id {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    color: var(--fg-mute);
+    text-transform: uppercase;
+  }
+  .portrait-id strong { color: var(--accent); }
+  .portrait-figure {
+    flex: 1;
+    margin: 24px 0;
+    display: grid;
+    place-items: center;
+    position: relative;
+  }
+  .portrait-figure svg {
+    width: 70%; height: auto;
+    filter: drop-shadow(0 0 40px rgba(231,197,71,0.15));
+  }
+  .portrait-figure .placeholder-text {
+    position: absolute;
+    bottom: 0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--fg-mute);
+    text-transform: uppercase;
+    background: var(--bg);
+    padding: 4px 8px;
+    border: 1px solid var(--line);
+  }
+  .portrait-foot {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+  .portrait-foot div {
+    border: 1px solid var(--line);
+    padding: 8px;
+    text-align: center;
+  }
+  .portrait-foot div b {
+    display: block;
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--accent);
+    font-size: 18px;
+    font-weight: 700;
+  }
+  .portrait-foot div span {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    color: var(--fg-mute);
+    text-transform: uppercase;
+  }
+
+  /* ---------- MARQUEE ---------- */
+  .marquee {
+    overflow: hidden;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    background: var(--bg-2);
+    padding: 18px 0;
+  }
+  .marquee-track {
+    display: flex;
+    gap: 48px;
+    white-space: nowrap;
+    animation: scroll 40s linear infinite;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(20px, 3vw, 32px);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--fg);
+  }
+  .marquee-track span { color: var(--accent); }
+  .marquee-track .dot {
+    color: var(--accent-2);
+    align-self: center;
+  }
+  @keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  /* ---------- SECTIONS ---------- */
+  section.block {
+    padding: 100px 0;
+    position: relative;
+  }
+  .section-head {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 48px;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .section-head p {
+    max-width: 420px;
+    color: var(--fg-dim);
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  /* STATS */
+  .stats {
+    background: var(--bg-2);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+  }
+  @media (max-width: 800px) { .stats-grid { grid-template-columns: repeat(2, 1fr); } }
+  .stat {
+    padding: 32px 24px;
+    border-right: 1px solid var(--line);
+    position: relative;
+  }
+  .stat:last-child { border-right: 0; }
+  @media (max-width: 800px) {
+    .stat:nth-child(2n) { border-right: 0; }
+    .stat:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+  }
+  .stat-num {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(40px, 5vw, 72px);
+    line-height: 1;
+    letter-spacing: -0.03em;
+    color: var(--fg);
+    font-variant-numeric: tabular-nums;
+  }
+  .stat-num .unit {
+    font-size: 0.4em;
+    color: var(--accent);
+    margin-left: 4px;
+    vertical-align: top;
+    letter-spacing: 0;
+  }
+  .stat-label {
+    margin-top: 12px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    color: var(--fg-mute);
+    text-transform: uppercase;
+  }
+  .stat-source {
+    margin-top: 6px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--fg-mute);
+    opacity: 0.7;
+  }
+
+  /* CAREER */
+  .career-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: start;
+  }
+  @media (max-width: 900px) { .career-grid { grid-template-columns: 1fr; gap: 32px; } }
+
+  .career-text p {
+    color: var(--fg-dim);
+    font-size: 15px;
+    line-height: 1.75;
+    margin-bottom: 18px;
+  }
+  .career-text strong { color: var(--fg); font-weight: 600; }
+  .career-quote {
+    margin-top: 32px;
+    padding: 24px;
+    border-left: 3px solid var(--accent);
+    background: var(--bg-2);
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 22px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+  }
+  .career-quote span {
+    display: block;
+    margin-top: 12px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--fg-mute);
+    text-transform: uppercase;
+  }
+
+  .timeline {
+    position: relative;
+    padding-left: 32px;
+    border-left: 1px solid var(--line);
+  }
+  .timeline-item {
+    position: relative;
+    padding-bottom: 28px;
+  }
+  .timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -38px;
+    top: 6px;
+    width: 12px; height: 12px;
+    background: var(--bg);
+    border: 2px solid var(--accent);
+  }
+  .timeline-item.highlight::before {
+    background: var(--accent);
+    box-shadow: 0 0 0 4px rgba(231,197,71,0.15);
+  }
+  .timeline-year {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+  }
+  .timeline-title {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 18px;
+    text-transform: uppercase;
+    margin: 4px 0 6px;
+    letter-spacing: -0.01em;
+  }
+  .timeline-desc {
+    color: var(--fg-dim);
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  /* MAJOR CARD */
+  .major {
+    background:
+      linear-gradient(135deg, rgba(231,197,71,0.04), transparent 50%),
+      var(--bg-2);
+    border: 1px solid var(--line-strong);
+    padding: 48px;
+    position: relative;
+    overflow: hidden;
+  }
+  @media (max-width: 720px) { .major { padding: 28px; } }
+  .major::before {
+    content: "MAJOR";
+    position: absolute;
+    right: -20px; top: 50%;
+    transform: translateY(-50%) rotate(90deg);
+    transform-origin: center;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 200px;
+    color: rgba(255,255,255,0.02);
+    letter-spacing: -0.04em;
+    pointer-events: none;
+  }
+  .major-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 48px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+  @media (max-width: 800px) { .major-grid { grid-template-columns: 1fr; } }
+
+  .major-id {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .major-name {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 48px;
+    line-height: 0.9;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+  }
+  .major-name span { color: var(--accent); }
+  .major-role {
+    margin-top: 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--fg-dim);
+    text-transform: uppercase;
+  }
+
+  .major-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+  @media (max-width: 600px) { .major-stats { grid-template-columns: repeat(2, 1fr); } }
+  .major-stat {
+    background: var(--bg);
+    border: 1px solid var(--line);
+    padding: 18px 14px;
+    position: relative;
+  }
+  .major-stat-v {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    font-size: 32px;
+    color: var(--fg);
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+  .major-stat-l {
+    margin-top: 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    color: var(--fg-mute);
+    text-transform: uppercase;
+  }
+  .major-stat.up .major-stat-v { color: var(--accent-3); }
+
+  /* ---------- AD SLOT ---------- */
+  .ad-section {
+    padding: 60px 0;
+    background: var(--bg-2);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .ad-slot {
+    border: 1px dashed var(--line-strong);
+    background: var(--bg);
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 24px;
+  }
+  .ad-slot::before {
+    content: "ADVERTISEMENT";
+    position: absolute;
+    top: -8px; left: 16px;
+    background: var(--bg);
+    padding: 0 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.24em;
+    color: var(--fg-mute);
+  }
+  .ad-slot ins.adsbygoogle {
+    display: block;
+    width: 100%;
+    min-height: 90px;
+  }
+
+  /* ---------- TRIBUTE / CTA ---------- */
+  .tribute {
+    text-align: center;
+    padding: 120px 24px;
+    background:
+      radial-gradient(ellipse 50% 50% at 50% 50%, rgba(231,197,71,0.08), transparent 70%),
+      var(--bg);
+    border-top: 1px solid var(--line);
+  }
+  .tribute h2 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(36px, 7vw, 96px);
+    line-height: 0.9;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+    max-width: 900px;
+    margin: 0 auto 24px;
+  }
+  .tribute h2 em {
+    font-style: normal;
+    color: var(--accent);
+  }
+  .tribute p {
+    color: var(--fg-dim);
+    max-width: 540px;
+    margin: 0 auto 36px;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  .cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 28px;
+    background: var(--accent);
+    color: #000;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    transition: transform 0.2s, background 0.2s;
+  }
+  .cta-btn:hover { transform: translateY(-2px); background: #fff; }
+  .cta-btn::after { content: "→"; font-size: 16px; }
+
+  /* ---------- FOOTER ---------- */
+  footer {
+    padding: 48px 0 32px;
+    border-top: 1px solid var(--line);
+    background: var(--bg);
+  }
+  .footer-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+  .footer-meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--fg-mute);
+    line-height: 1.8;
+    letter-spacing: 0.06em;
+  }
+  .footer-meta strong { color: var(--fg); }
+  .footer-links {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .footer-links a {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--fg-dim);
+  }
+  .footer-links a:hover { color: var(--accent); }
+  .footer-bottom {
+    margin-top: 32px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--fg-mute);
+    text-align: center;
+    letter-spacing: 0.16em;
+  }
+
+  /* ---------- ENDED STATE ---------- */
+  .countdown-wrap.ended .cd-num { color: var(--accent); }
+  .countdown-wrap.ended .countdown-target { color: var(--accent-2); }
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="nav">
+  <div class="container nav-inner">
+    <a href="#" class="brand">
+      <div class="brand-mark"><span>F</span></div>
+      <span>Obrigado, Professor</span>
+    </a>
+    <nav class="nav-links">
+      <a href="#countdown">Contagem</a>
+      <a href="#stats">Números</a>
+      <a href="#career">Carreira</a>
+      <a href="#tribute">Tributo</a>
+    </nav>
+    <a href="#tribute" class="nav-cta">31.12.2026</a>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="countdown">
+  <div class="container hero-grid">
+    <div>
+      <div class="hero-tag">
+        <div class="hero-tag-pulse"></div>
+        <span>Live · Aposentadoria oficial · 31.12.2026</span>
+      </div>
+
+      <h1 class="hero-title">
+        Obrigado,<br>
+        <span class="accent">Professor</span><br>
+        <span class="stroke">Fallen</span>
+      </h1>
+      <p class="hero-sub">
+        Mais de duas décadas defendendo as cores do Brasil em Counter-Strike.
+        Esta é a contagem regressiva pública até a despedida do AWP que
+        ensinou uma geração inteira a sonhar grande.
+      </p>
+
+      <div class="countdown-wrap" id="cdWrap" style="margin-top: 40px;">
+        <div class="countdown-label">
+          <span class="countdown-label-l">› Tempo restante</span>
+          <span class="countdown-target" id="cdTarget">31.DEZ.2026 · 23:59 BRT</span>
+        </div>
+        <div class="countdown" id="countdown">
+          <div class="cd-cell">
+            <div class="cd-num" id="d">000</div>
+            <div class="cd-lab">Dias</div>
+          </div>
+          <div class="cd-cell">
+            <div class="cd-num" id="h">00</div>
+            <div class="cd-lab">Horas</div>
+          </div>
+          <div class="cd-cell">
+            <div class="cd-num" id="m">00</div>
+            <div class="cd-lab">Minutos</div>
+          </div>
+          <div class="cd-cell">
+            <div class="cd-num" id="s">00</div>
+            <div class="cd-lab">Segundos</div>
+          </div>
+        </div>
+        <div class="countdown-foot">
+          <span>SYS://countdown.fallen — running</span>
+          <span id="cdPct">0.00%</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- PORTRAIT CARD -->
+    <div class="portrait" aria-label="Portrait placeholder for FalleN">
+      <div class="portrait-bg"></div>
+      <div class="portrait-name">FALLEN</div>
+      <div class="portrait-content">
+        <div class="portrait-head">
+          <div class="portrait-id">
+            ID: <strong>#FLN_2003</strong><br>
+            ROLE: AWPER / IGL
+          </div>
+          <div class="portrait-id" style="text-align: right;">
+            BR<br>
+            <strong>SÃO PAULO</strong>
+          </div>
+        </div>
+
+        <div class="portrait-figure">
+          <!-- Geometric monogram placeholder — não é um retrato real -->
+          <svg viewBox="0 0 200 240" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs>
+              <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#e7c547" stop-opacity="0.9"/>
+                <stop offset="100%" stop-color="#e7c547" stop-opacity="0.2"/>
+              </linearGradient>
+            </defs>
+            <rect x="20" y="20" width="160" height="200" stroke="#e7c547" stroke-width="1" stroke-dasharray="4 4" opacity="0.4"/>
+            <circle cx="100" cy="80" r="32" stroke="url(#g1)" stroke-width="2"/>
+            <path d="M68 130 L100 110 L132 130 L132 200 L68 200 Z" stroke="url(#g1)" stroke-width="2"/>
+            <text x="100" y="170" text-anchor="middle" font-family="Archivo Black, sans-serif" font-size="44" fill="#e7c547" letter-spacing="-2">FLN</text>
+          </svg>
+          <div class="placeholder-text">[ inserir retrato oficial ]</div>
+        </div>
+
+        <div class="portrait-foot">
+          <div><b>2003</b><span>Estreia</span></div>
+          <div><b>2x</b><span>Major</span></div>
+          <div><b>1.10+</b><span>Rating</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MARQUEE ============ -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Obrigado, Professor</span><span class="dot">●</span>
+    <span style="color: var(--accent)">Vai com Deus</span><span class="dot">●</span>
+    <span>O legado é o caminho</span><span class="dot">●</span>
+    <span style="color: var(--accent)">Brasil, sempre</span><span class="dot">●</span>
+    <span>2003 — 2026</span><span class="dot">●</span>
+    <span style="color: var(--accent)">GG, Fallen</span><span class="dot">●</span>
+    <!-- duplicate for seamless loop -->
+    <span>Obrigado, Professor</span><span class="dot">●</span>
+    <span style="color: var(--accent)">Vai com Deus</span><span class="dot">●</span>
+    <span>O legado é o caminho</span><span class="dot">●</span>
+    <span style="color: var(--accent)">Brasil, sempre</span><span class="dot">●</span>
+    <span>2003 — 2026</span><span class="dot">●</span>
+    <span style="color: var(--accent)">GG, Fallen</span><span class="dot">●</span>
+  </div>
+</div>
+
+<!-- ============ STATS ============ -->
+<section class="stats" id="stats">
+  <div class="container">
+    <div class="section-head" style="padding-top: 80px;">
+      <div>
+        <span class="eyebrow">// Capítulo 01 — Os números</span>
+        <h2 class="h2" style="margin-top: 16px;">Vinte e três anos<br>de carreira em <em style="color: var(--accent); font-style: normal;">números</em>.</h2>
+      </div>
+      <p>
+        Estatísticas agregadas de carreira em torneios profissionais.
+        Os valores são aproximações públicas — atualize com fontes oficiais
+        antes de publicar.
+      </p>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat">
+        <div class="stat-num">1.450<span class="unit">+</span></div>
+        <div class="stat-label">Partidas oficiais</div>
+        <div class="stat-source">// HLTV ranked maps</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">23.000<span class="unit">+</span></div>
+        <div class="stat-label">Eliminações em LAN</div>
+        <div class="stat-source">// Lifetime kills</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">35<span class="unit">%</span></div>
+        <div class="stat-label">Headshot rate</div>
+        <div class="stat-source">// HS / total kills</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">2<span class="unit">×</span></div>
+        <div class="stat-label">Major Champion</div>
+        <div class="stat-source">// MLG · ESL One Cologne</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MAJOR CARD ============ -->
+<section class="block">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">// Capítulo 02 — Last dance</span>
+        <h2 class="h2" style="margin-top: 16px;">A última<br>partida.</h2>
+      </div>
+      <p>
+        Recorte da performance no Major mais recente — o tipo de janela
+        que a comunidade vai recortar, frame a frame, depois do dia 31.
+      </p>
+    </div>
+
+    <div class="major">
+      <div class="major-grid">
+        <div>
+          <div class="major-id">// Match snapshot</div>
+          <div class="major-name">Gabriel<br><span>Toledo</span></div>
+          <div class="major-role">In-game leader · AWPer</div>
+        </div>
+        <div class="major-stats">
+          <div class="major-stat up">
+            <div class="major-stat-v">27</div>
+            <div class="major-stat-l">Kills</div>
+          </div>
+          <div class="major-stat">
+            <div class="major-stat-v">14</div>
+            <div class="major-stat-l">Deaths</div>
+          </div>
+          <div class="major-stat up">
+            <div class="major-stat-v">70.9</div>
+            <div class="major-stat-l">ADR</div>
+          </div>
+          <div class="major-stat up">
+            <div class="major-stat-v">1.39</div>
+            <div class="major-stat-l">Rating</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AD SLOT ============ -->
+<section class="ad-section" aria-label="Advertisement">
+  <div class="container">
+    <div class="ad-slot">
+      <!-- Google AdSense — substitua client/slot pelos seus reais -->
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+           data-ad-slot="XXXXXXXXXX"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <noscript>
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--fg-mute); letter-spacing: 0.16em;">
+          [ banner 970×120 — google adsense ]
+        </div>
+      </noscript>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CAREER ============ -->
+<section class="block" id="career">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">// Capítulo 03 — A linha do tempo</span>
+        <h2 class="h2" style="margin-top: 16px;">De 1.6 a CS2,<br>sem pular um round.</h2>
+      </div>
+      <p>
+        Uma carreira que atravessou três versões de Counter-Strike,
+        múltiplas organizações e a construção de uma cena inteira.
+      </p>
+    </div>
+
+    <div class="career-grid">
+      <div class="career-text">
+        <p>
+          <strong>Gabriel "FalleN" Toledo</strong> começou a competir profissionalmente
+          quando o Brasil ainda era um ponto pequeno no mapa global de Counter-Strike.
+          Em pouco mais de uma década, transformou um cenário improvisado em uma das
+          escolas mais respeitadas do mundo.
+        </p>
+        <p>
+          Mais do que estrelas individuais, Fallen ergueu <strong>infraestrutura</strong>:
+          treinamento, in-game leading, formação de jovens jogadores e uma base de fãs
+          que enche arena. O título de Major em 2016 não foi um acidente — foi a
+          consequência de anos preparando um ecossistema inteiro.
+        </p>
+        <p>
+          Aos 35, com a transição CS:GO → CS2 já madura, ele anunciou que
+          <strong>31 de dezembro de 2026</strong> será sua última partida oficial.
+          Esta página existe para marcar a contagem, sem pressa.
+        </p>
+
+        <div class="career-quote">
+          "Preparation is everything. <br>O resto vem depois."
+          <span>— pensamento que virou metodologia</span>
+        </div>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-year">2003</div>
+          <div class="timeline-title">Início no 1.6</div>
+          <div class="timeline-desc">Primeiras line-ups. A cena ainda cabia numa LAN house.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2014 — 2015</div>
+          <div class="timeline-title">A era das cinco estrelas</div>
+          <div class="timeline-desc">Formação do squad que viraria referência global. Top 1 mundial.</div>
+        </div>
+        <div class="timeline-item highlight">
+          <div class="timeline-year">2016</div>
+          <div class="timeline-title">Major Champion · MLG Columbus</div>
+          <div class="timeline-desc">O Brasil entra para o clube fechadíssimo dos campeões mundiais.</div>
+        </div>
+        <div class="timeline-item highlight">
+          <div class="timeline-year">2016</div>
+          <div class="timeline-title">Bicampeão · ESL One Cologne</div>
+          <div class="timeline-desc">Confirmação de uma dinastia. Ano fechado em 1º.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2022</div>
+          <div class="timeline-title">Volta para casa</div>
+          <div class="timeline-desc">Reconstrução de uma escola brasileira sob nova bandeira.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2023 — 2025</div>
+          <div class="timeline-title">Transição para CS2</div>
+          <div class="timeline-desc">Última fase competitiva. Mentoria de uma nova geração.</div>
+        </div>
+        <div class="timeline-item highlight">
+          <div class="timeline-year">31.12.2026</div>
+          <div class="timeline-title">A última partida</div>
+          <div class="timeline-desc">Aposentadoria oficial das competições profissionais.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRIBUTE / CTA ============ -->
+<section class="tribute" id="tribute">
+  <div class="container">
+    <span class="eyebrow">// Capítulo final</span>
+    <h2 style="margin-top: 24px;">
+      O AWP descansa.<br>
+      <em>O legado segue.</em>
+    </h2>
+    <p>
+      Compartilhe a contagem com quem cresceu vendo Fallen jogar.
+      Quanto mais perto do dia 31, maior o tributo coletivo.
+    </p>
+    <a href="#" class="cta-btn" id="shareBtn">Compartilhar a contagem</a>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-meta">
+        <strong>OBRIGADO, PROFESSOR</strong><br>
+        Tributo independente de fãs · não afiliado a nenhuma organização<br>
+        Atualizado em <span id="updated">—</span>
+      </div>
+      <div class="footer-links">
+        <a href="#countdown">Contagem</a>
+        <a href="#stats">Números</a>
+        <a href="#career">Carreira</a>
+        <a href="#tribute">Compartilhar</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2026 · Feito por fãs, para fãs · #ObrigadoFalleN
+    </div>
+  </div>
+</footer>
+
+<!-- ============ JS ============ -->
+<script>
+  // ---- Countdown logic ----
+  // Target: 31 Dec 2026, 23:59:59 BRT (UTC-3) → 1 Jan 2027 02:59:59 UTC
+  const TARGET = new Date('2026-12-31T23:59:59-03:00').getTime();
+  const START = new Date('2003-01-01T00:00:00-03:00').getTime(); // for progress %
+
+  const $d = document.getElementById('d');
+  const $h = document.getElementById('h');
+  const $m = document.getElementById('m');
+  const $s = document.getElementById('s');
+  const $pct = document.getElementById('cdPct');
+  const $wrap = document.getElementById('cdWrap');
+
+  function pad(n, w = 2) { return String(Math.max(0, n)).padStart(w, '0'); }
+
+  function tick() {
+    const now = Date.now();
+    const diff = TARGET - now;
+
+    if (diff <= 0) {
+      $d.textContent = '000';
+      $h.textContent = '00';
+      $m.textContent = '00';
+      $s.textContent = '00';
+      $pct.textContent = '100.00% · GG';
+      $wrap.classList.add('ended');
+      document.getElementById('cdTarget').textContent = '01.01.2027 · LEGEND OFFLINE';
+      return;
+    }
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const mins = Math.floor((diff / (1000 * 60)) % 60);
+    const secs = Math.floor((diff / 1000) % 60);
+
+    $d.textContent = pad(days, 3);
+    $h.textContent = pad(hours);
+    $m.textContent = pad(mins);
+    $s.textContent = pad(secs);
+
+    const total = TARGET - START;
+    const elapsed = now - START;
+    const pct = Math.min(100, Math.max(0, (elapsed / total) * 100));
+    $pct.textContent = pct.toFixed(2) + '% da carreira';
+  }
+
+  tick();
+  setInterval(tick, 1000);
+
+  // ---- Updated date ----
+  const u = new Date();
+  document.getElementById('updated').textContent =
+    u.toLocaleDateString('pt-BR', { day: '2-digit', month: 'short', year: 'numeric' }).toUpperCase();
+
+  // ---- Share button ----
+  document.getElementById('shareBtn').addEventListener('click', async (e) => {
+    e.preventDefault();
+    const data = {
+      title: 'Obrigado, Professor — Contagem para a aposentadoria do FalleN',
+      text: 'Quanto falta para a última partida oficial do FalleN?',
+      url: window.location.href
+    };
+    if (navigator.share) {
+      try { await navigator.share(data); } catch (_) {}
+    } else {
+      try {
+        await navigator.clipboard.writeText(data.url);
+        const btn = e.currentTarget;
+        const original = btn.textContent;
+        btn.textContent = 'Link copiado ✓';
+        setTimeout(() => { btn.innerHTML = 'Compartilhar a contagem'; }, 1800);
+      } catch (_) {}
+    }
+  });
+
+  // ---- AdSense init (no-op em dev sem IDs reais) ----
+  try {
+    (window.adsbygoogle = window.adsbygoogle || []).push({});
+  } catch (e) { /* ok in preview */ }
+</script>
+
+</body>
+</html>
