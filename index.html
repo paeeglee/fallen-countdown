@@ -157,7 +157,7 @@
   .hero-grid {
     position: relative;
     display: grid;
-    grid-template-columns: 1.1fr 1fr;
+    grid-template-columns: minmax(0, 1.1fr) minmax(360px, 1fr);
     gap: 48px;
     align-items: center;
   }
@@ -197,6 +197,9 @@
     line-height: 0.85;
     letter-spacing: -0.04em;
     text-transform: uppercase;
+  }
+  @media (min-width: 981px) {
+    .hero-title { font-size: clamp(56px, 7vw, 96px); }
   }
   .hero-title .stroke {
     -webkit-text-stroke: 2px var(--fg);
@@ -362,9 +365,13 @@
     place-items: center;
     position: relative;
   }
-  .portrait-figure svg {
+  .portrait-figure svg,
+  .portrait-figure img {
     width: 70%; height: auto;
     filter: drop-shadow(0 0 40px rgba(231,197,71,0.15));
+  }
+  .portrait-figure img {
+    object-fit: contain;
   }
   .portrait-figure .placeholder-text {
     position: absolute;
@@ -887,20 +894,7 @@
         </div>
 
         <div class="portrait-figure">
-          <!-- Geometric monogram placeholder — não é um retrato real -->
-          <svg viewBox="0 0 200 240" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <defs>
-              <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stop-color="#e7c547" stop-opacity="0.9"/>
-                <stop offset="100%" stop-color="#e7c547" stop-opacity="0.2"/>
-              </linearGradient>
-            </defs>
-            <rect x="20" y="20" width="160" height="200" stroke="#e7c547" stroke-width="1" stroke-dasharray="4 4" opacity="0.4"/>
-            <circle cx="100" cy="80" r="32" stroke="url(#g1)" stroke-width="2"/>
-            <path d="M68 130 L100 110 L132 130 L132 200 L68 200 Z" stroke="url(#g1)" stroke-width="2"/>
-            <text x="100" y="170" text-anchor="middle" font-family="Archivo Black, sans-serif" font-size="44" fill="#e7c547" letter-spacing="-2">FLN</text>
-          </svg>
-          <div class="placeholder-text">[ inserir retrato oficial ]</div>
+          <img src="https://fallen.cdn.magazord.com.br/img/2025/09/produto/4749/mousepad-the-professor-grande-4.png" alt="The Professor — FalleN" loading="lazy">
         </div>
 
         <div class="portrait-foot">
