@@ -30,14 +30,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700&family=Archivo+Black&display=swap" rel="stylesheet">
 
-<!--
-  GOOGLE ADSENSE — escolhido sobre o Meta Ads por dois motivos:
-  1) Tráfego esperado é majoritariamente orgânico (SEO + buscas tipo "quanto falta para o Fallen se aposentar")
-  2) Display ads contextual + AdSense é o caminho padrão para sites de conteúdo
-  Substitua data-ad-client e data-ad-slot pelos seus IDs reais ao publicar.
--->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
-
 <style>
   /* ---------- TOKENS ---------- */
   :root {
@@ -697,40 +689,6 @@
   }
   .major-stat.up .major-stat-v { color: var(--accent-3); }
 
-  /* ---------- AD SLOT ---------- */
-  .ad-section {
-    padding: 60px 0;
-    background: var(--bg-2);
-    border-top: 1px solid var(--line);
-    border-bottom: 1px solid var(--line);
-  }
-  .ad-slot {
-    border: 1px dashed var(--line-strong);
-    background: var(--bg);
-    min-height: 120px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    padding: 24px;
-  }
-  .ad-slot::before {
-    content: "ADVERTISEMENT";
-    position: absolute;
-    top: -8px; left: 16px;
-    background: var(--bg);
-    padding: 0 8px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 9px;
-    letter-spacing: 0.24em;
-    color: var(--fg-mute);
-  }
-  .ad-slot ins.adsbygoogle {
-    display: block;
-    width: 100%;
-    min-height: 90px;
-  }
-
   /* ---------- TRIBUTE / CTA ---------- */
   .tribute {
     text-align: center;
@@ -850,10 +808,10 @@
 <section class="hero" id="countdown">
   <div class="container hero-grid">
     <div>
-      <div class="hero-tag">
+      <!-- <div class="hero-tag">
         <div class="hero-tag-pulse"></div>
         <span>Live · Aposentadoria oficial · 31.12.2026</span>
-      </div>
+      </div> -->
 
       <h1 class="hero-title">
         Obrigado,<br>
@@ -918,8 +876,8 @@
 
         <div class="portrait-foot">
           <div><b>2003</b><span>Estreia</span></div>
-          <div><b>2x</b><span>Major</span></div>
-          <div><b>1.10+</b><span>Rating</span></div>
+          <div><b>2×</b><span>Major</span></div>
+          <div><b>1.10</b><span>K/D Carreira</span></div>
         </div>
       </div>
     </div>
@@ -954,32 +912,32 @@
         <h2 class="h2" style="margin-top: 16px;">Vinte e três anos<br>de carreira em <em style="color: var(--accent); font-style: normal;">números</em>.</h2>
       </div>
       <p>
-        Estatísticas agregadas de carreira em torneios profissionais.
-        Os valores são aproximações públicas — atualize com fontes oficiais
-        antes de publicar.
+        Estatísticas agregadas de carreira profissional segundo a HLTV.
+        Mais de duas mil partidas oficiais, dois títulos de Major e
+        a AWP brasileira mais decisiva da história.
       </p>
     </div>
 
     <div class="stats-grid">
       <div class="stat">
-        <div class="stat-num">1.450<span class="unit">+</span></div>
-        <div class="stat-label">Partidas oficiais</div>
-        <div class="stat-source">// HLTV ranked maps</div>
+        <div class="stat-num">2.238</div>
+        <div class="stat-label">Mapas profissionais</div>
+        <div class="stat-source">// HLTV — total maps played</div>
       </div>
       <div class="stat">
-        <div class="stat-num">23.000<span class="unit">+</span></div>
-        <div class="stat-label">Eliminações em LAN</div>
-        <div class="stat-source">// Lifetime kills</div>
+        <div class="stat-num">38.046</div>
+        <div class="stat-label">Eliminações na carreira</div>
+        <div class="stat-source">// HLTV — lifetime kills</div>
       </div>
       <div class="stat">
-        <div class="stat-num">35<span class="unit">%</span></div>
-        <div class="stat-label">Headshot rate</div>
-        <div class="stat-source">// HS / total kills</div>
+        <div class="stat-num">19.366</div>
+        <div class="stat-label">Kills com sniper</div>
+        <div class="stat-source">// HLTV — AWP & scout kills</div>
       </div>
       <div class="stat">
         <div class="stat-num">2<span class="unit">×</span></div>
         <div class="stat-label">Major Champion</div>
-        <div class="stat-source">// MLG · ESL One Cologne</div>
+        <div class="stat-source">// MLG Columbus · ESL Cologne 2016</div>
       </div>
     </div>
   </div>
@@ -990,61 +948,41 @@
   <div class="container">
     <div class="section-head">
       <div>
-        <span class="eyebrow">// Capítulo 02 — Last dance</span>
-        <h2 class="h2" style="margin-top: 16px;">A última<br>partida.</h2>
+        <span class="eyebrow">// Capítulo 02 — A média não mente</span>
+        <h2 class="h2" style="margin-top: 16px;">Os números<br>que ficam.</h2>
       </div>
       <p>
-        Recorte da performance no Major mais recente — o tipo de janela
-        que a comunidade vai recortar, frame a frame, depois do dia 31.
+        Médias agregadas por toda a carreira de FalleN no CS:GO e CS2,
+        somando 2.238 mapas profissionais e 56.455 rounds disputados.
       </p>
     </div>
 
     <div class="major">
       <div class="major-grid">
         <div>
-          <div class="major-id">// Match snapshot</div>
+          <div class="major-id">// Career snapshot · HLTV</div>
           <div class="major-name">Gabriel<br><span>Toledo</span></div>
-          <div class="major-role">In-game leader · AWPer</div>
+          <div class="major-role">In-game leader · AWPer · 34 anos</div>
         </div>
         <div class="major-stats">
           <div class="major-stat up">
-            <div class="major-stat-v">27</div>
-            <div class="major-stat-l">Kills</div>
-          </div>
-          <div class="major-stat">
-            <div class="major-stat-v">14</div>
-            <div class="major-stat-l">Deaths</div>
+            <div class="major-stat-v">1.10</div>
+            <div class="major-stat-l">K/D</div>
           </div>
           <div class="major-stat up">
-            <div class="major-stat-v">70.9</div>
+            <div class="major-stat-v">69.7</div>
             <div class="major-stat-l">ADR</div>
           </div>
+          <div class="major-stat">
+            <div class="major-stat-v">32.8<span style="font-size:0.55em;opacity:0.7">%</span></div>
+            <div class="major-stat-l">Headshot</div>
+          </div>
           <div class="major-stat up">
-            <div class="major-stat-v">1.39</div>
-            <div class="major-stat-l">Rating</div>
+            <div class="major-stat-v">1.04</div>
+            <div class="major-stat-l">Rating 1.0</div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ AD SLOT ============ -->
-<section class="ad-section" aria-label="Advertisement">
-  <div class="container">
-    <div class="ad-slot">
-      <!-- Google AdSense — substitua client/slot pelos seus reais -->
-      <ins class="adsbygoogle"
-           style="display:block"
-           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
-           data-ad-slot="XXXXXXXXXX"
-           data-ad-format="auto"
-           data-full-width-responsive="true"></ins>
-      <noscript>
-        <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--fg-mute); letter-spacing: 0.16em;">
-          [ banner 970×120 — google adsense ]
-        </div>
-      </noscript>
     </div>
   </div>
 </section>
@@ -1097,28 +1035,33 @@
         </div>
         <div class="timeline-item">
           <div class="timeline-year">2014 — 2015</div>
-          <div class="timeline-title">A era das cinco estrelas</div>
-          <div class="timeline-desc">Formação do squad que viraria referência global. Top 1 mundial.</div>
+          <div class="timeline-title">Keyd · Luminosity · transição CS:GO</div>
+          <div class="timeline-desc">200 mapas em 2015 com rating 1.09. O squad brasileiro ganha contornos globais.</div>
         </div>
         <div class="timeline-item highlight">
           <div class="timeline-year">2016</div>
           <div class="timeline-title">Major Champion · MLG Columbus</div>
-          <div class="timeline-desc">O Brasil entra para o clube fechadíssimo dos campeões mundiais.</div>
+          <div class="timeline-desc">Primeiro título de Major do Brasil. Pico de carreira: rating 1.14 em 263 mapas.</div>
         </div>
         <div class="timeline-item highlight">
           <div class="timeline-year">2016</div>
           <div class="timeline-title">Bicampeão · ESL One Cologne</div>
-          <div class="timeline-desc">Confirmação de uma dinastia. Ano fechado em 1º.</div>
+          <div class="timeline-desc">Dois Majors em três meses. O ano que sela a dinastia.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2017 — 2020</div>
+          <div class="timeline-title">SK · MIBR · Liquid · Faze</div>
+          <div class="timeline-desc">869 mapas profissionais entre quatro orgs. Rating médio acima de 1.05.</div>
         </div>
         <div class="timeline-item">
           <div class="timeline-year">2022</div>
-          <div class="timeline-title">Volta para casa</div>
-          <div class="timeline-desc">Reconstrução de uma escola brasileira sob nova bandeira.</div>
+          <div class="timeline-title">Imperial · de volta para casa</div>
+          <div class="timeline-desc">Rating 1.06 com bandeira BR. Rodada final em três Majors no biênio.</div>
         </div>
         <div class="timeline-item">
-          <div class="timeline-year">2023 — 2025</div>
-          <div class="timeline-title">Transição para CS2</div>
-          <div class="timeline-desc">Última fase competitiva. Mentoria de uma nova geração.</div>
+          <div class="timeline-year">2024 — 2026</div>
+          <div class="timeline-title">FURIA · transição CS2</div>
+          <div class="timeline-desc">Última fase competitiva. Mentoria de uma nova geração com KSCERATO e yuurih.</div>
         </div>
         <div class="timeline-item highlight">
           <div class="timeline-year">31.12.2026</div>
@@ -1243,11 +1186,6 @@
       } catch (_) {}
     }
   });
-
-  // ---- AdSense init (no-op em dev sem IDs reais) ----
-  try {
-    (window.adsbygoogle = window.adsbygoogle || []).push({});
-  } catch (e) { /* ok in preview */ }
 </script>
 
 </body>
