@@ -693,6 +693,94 @@
   }
   .major-stat.up .major-stat-v { color: var(--accent-3); }
 
+  /* ---------- TROPHIES ---------- */
+  .trophies { padding: 100px 0 120px; }
+  .trophy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 16px;
+    margin-top: 48px;
+  }
+  .trophy-card {
+    border: 1px solid var(--line);
+    background: var(--bg-2);
+    padding: 28px 16px 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 14px;
+    position: relative;
+    transition: border-color 0.2s ease, transform 0.2s ease, background 0.2s ease;
+    text-decoration: none;
+    color: inherit;
+    min-height: 200px;
+  }
+  .trophy-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+    background: var(--bg-3);
+  }
+  .trophy-card.major {
+    border-color: rgba(231,197,71,0.6);
+    background: linear-gradient(180deg, rgba(231,197,71,0.06), transparent 70%);
+  }
+  .trophy-card.major:hover { border-color: var(--accent); }
+  .trophy-card.mvp { border-color: rgba(255,59,48,0.5); }
+  .trophy-card.mvp:hover { border-color: var(--accent-2); }
+  .trophy-tag {
+    position: absolute;
+    top: -1px; left: -1px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    padding: 4px 8px;
+    background: var(--bg);
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    text-transform: uppercase;
+  }
+  .trophy-card.mvp .trophy-tag {
+    border-color: var(--accent-2);
+    color: var(--accent-2);
+  }
+  .trophy-img {
+    width: 72px;
+    height: 72px;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 16px rgba(0,0,0,0.4));
+  }
+  .trophy-img--logo {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+  .trophy-card.mvp .trophy-img,
+  .trophy-card.ranking .trophy-img {
+    filter: drop-shadow(0 0 16px rgba(231,197,71,0.2));
+  }
+  .trophy-name {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    color: var(--fg);
+    line-height: 1.4;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+  .trophy-sub {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    color: var(--fg-mute);
+    text-transform: uppercase;
+    margin-top: auto;
+  }
+  @media (max-width: 600px) {
+    .trophy-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .trophy-card { padding: 24px 12px 14px; min-height: 180px; }
+    .trophy-img { width: 56px; height: 56px; }
+  }
+
   /* ---------- TRIBUTE / CTA ---------- */
   .tribute {
     text-align: center;
@@ -801,6 +889,7 @@
     <nav class="nav-links">
       <a href="#countdown">Contagem</a>
       <a href="#stats">Números</a>
+      <a href="#trophies">Vitrine</a>
       <a href="#career">Carreira</a>
       <a href="#tribute">Tributo</a>
     </nav>
@@ -991,12 +1080,142 @@
   </div>
 </section>
 
+<!-- ============ TROPHIES ============ -->
+<section class="trophies block" id="trophies">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">// Capítulo 03 — A vitrine</span>
+        <h2 class="h2" style="margin-top: 16px;">Vinte títulos.<br>Dois <em style="color: var(--accent); font-style: normal;">Majors</em>.</h2>
+      </div>
+      <p>
+        Conquistas oficiais segundo a HLTV, na ordem em que foram somadas
+        ao currículo — do mais recente ao primeiro título de Major. Quatro
+        prêmios de MVP fecham a vitrine.
+      </p>
+    </div>
+
+    <div class="trophy-grid">
+      <a class="trophy-card mvp" href="https://www.hltv.org/player/2023/fallen" target="_blank" rel="noopener">
+        <span class="trophy-tag">4× MVP</span>
+        <img class="trophy-img" src="https://www.hltv.org/img/static/event/mvpOld.png" alt="MVP awards" loading="lazy">
+        <div class="trophy-name">Most Valuable Player</div>
+        <div class="trophy-sub">Cologne 17 · Copenhagen 17 · ZOTAC 18 · DH Austin 16</div>
+      </a>
+      <a class="trophy-card" href="https://www.hltv.org/events/7908/blast-rivals-2025-season-2" target="_blank" rel="noopener">
+        <img class="trophy-img" src="assets/blast-rivals-2025-s2.png" alt="BLAST Rivals 2025 Season 2" loading="lazy">
+        <div class="trophy-name">BLAST Rivals 2025</div>
+        <div class="trophy-sub">Season 2</div>
+      </a>
+      <a class="trophy-card" href="https://www.hltv.org/events/8041/iem-chengdu-2025" target="_blank" rel="noopener">
+        <img class="trophy-img" src="assets/iem-chengdu-2025.png" alt="IEM Chengdu 2025" loading="lazy">
+        <div class="trophy-name">IEM Chengdu</div>
+        <div class="trophy-sub">2025</div>
+      </a>
+      <a class="trophy-card" href="https://www.hltv.org/events/8067/thunderpick-world-championship-2025" target="_blank" rel="noopener">
+        <img class="trophy-img" src="assets/thunderpick-2025.png" alt="Thunderpick World Championship 2025" loading="lazy">
+        <div class="trophy-name">Thunderpick World Championship</div>
+        <div class="trophy-sub">2025</div>
+      </a>
+      <a class="trophy-card" href="https://www.hltv.org/events/8064/fissure-playground-2" target="_blank" rel="noopener">
+        <img class="trophy-img" src="assets/fissure-playground-2.png" alt="FISSURE Playground 2" loading="lazy">
+        <div class="trophy-name">FISSURE Playground 2</div>
+        <div class="trophy-sub">2025</div>
+      </a>
+      <a class="trophy-card" href="https://www.hltv.org/events/7250/elisa-masters-espoo-2023" target="_blank" rel="noopener">
+        <img class="trophy-img" src="assets/elisa-masters-espoo-2023.png" alt="Elisa Masters Espoo 2023" loading="lazy">
+        <div class="trophy-name">Elisa Masters Espoo</div>
+        <div class="trophy-sub">2023</div>
+      </a>
+      <a class="trophy-card" href="https://www.hltv.org/events/3603/zotac-cup-masters-2018-grand-finals" target="_blank" rel="noopener">
+        <img class="trophy-img" src="https://www.hltv.org/img/static/event/trophies/3603.png" alt="ZOTAC Cup Masters 2018 Grand Finals" loading="lazy">
+        <div class="trophy-name">ZOTAC Cup Masters</div>
+        <div class="trophy-sub">Grand Finals · 2018</div>
+      </a>
+      <a class="trophy-card ranking" href="https://www.hltv.org/news/22446/top-20-players-of-2017-fallen-6" target="_blank" rel="noopener">
+        <span class="trophy-tag">HLTV TOP 20</span>
+        <img class="trophy-img" src="https://www.hltv.org/img/static/event/trophies/2017/6.png" alt="#6 best player in 2017" loading="lazy">
+        <div class="trophy-name">#6 Player of the Year</div>
+        <div class="trophy-sub">2017</div>
+      </a>
+      <a class="trophy-card" href="https://www.hltv.org/events/3072/esl-pro-league-season-6-finals" target="_blank" rel="noopener">
+        <img class="trophy-img" src="https://www.hltv.org/img/static/event/trophies/3072.png" alt="ESL Pro League Season 6 Finals" loading="lazy">
+        <div class="trophy-name">ESL Pro League S6</div>
+        <div class="trophy-sub">Finals · 2017</div>
+      </a>
+      <a class="trophy-card" href="https://www.hltv.org/events/2998/blast-pro-series-copenhagen-2017" target="_blank" rel="noopener">
+        <img class="trophy-img" src="https://www.hltv.org/img/static/event/trophies/2998.png" alt="BLAST Pro Series Copenhagen 2017" loading="lazy">
+        <div class="trophy-name">BLAST Pro Series Copenhagen</div>
+        <div class="trophy-sub">2017</div>
+      </a>
+      <a class="trophy-card" href="https://www.hltv.org/events/3133/epicenter-2017" target="_blank" rel="noopener">
+        <img class="trophy-img" src="https://www.hltv.org/img/static/event/trophies/3133.png" alt="EPICENTER 2017" loading="lazy">
+        <div class="trophy-name">EPICENTER</div>
+        <div class="trophy-sub">2017</div>
+      </a>
+      <a class="trophy-card" href="https://www.hltv.org/events/2635/esl-one-cologne-2017" target="_blank" rel="noopener">
+        <img class="trophy-img" src="https://www.hltv.org/img/static/event/trophies/2635.png" alt="ESL One Cologne 2017" loading="lazy">
+        <div class="trophy-name">ESL One Cologne</div>
+        <div class="trophy-sub">2017</div>
+      </a>
+      <a class="trophy-card" href="https://www.hltv.org/events/2763/ecs-season-3-finals" target="_blank" rel="noopener">
+        <img class="trophy-img" src="https://www.hltv.org/img/static/event/trophies/2763.png" alt="ECS Season 3 Finals" loading="lazy">
+        <div class="trophy-name">ECS Season 3</div>
+        <div class="trophy-sub">Finals · 2017</div>
+      </a>
+      <a class="trophy-card" href="https://www.hltv.org/events/2569/dreamhack-open-summer-2017" target="_blank" rel="noopener">
+        <img class="trophy-img" src="https://www.hltv.org/img/static/event/trophies/2569.png" alt="DreamHack Open Summer 2017" loading="lazy">
+        <div class="trophy-name">DreamHack Open Summer</div>
+        <div class="trophy-sub">2017</div>
+      </a>
+      <a class="trophy-card" href="https://www.hltv.org/events/2713/iem-sydney-2017" target="_blank" rel="noopener">
+        <img class="trophy-img" src="https://www.hltv.org/img/static/event/trophies/2713.png" alt="IEM Sydney 2017" loading="lazy">
+        <div class="trophy-name">IEM Sydney</div>
+        <div class="trophy-sub">2017</div>
+      </a>
+      <a class="trophy-card" href="https://www.hltv.org/events/2641/cs-summit-spring-2017" target="_blank" rel="noopener">
+        <img class="trophy-img trophy-img--logo" src="assets/cs-summit-spring-2017.png" alt="cs_summit Spring 2017" loading="lazy">
+        <div class="trophy-name">cs_summit Spring</div>
+        <div class="trophy-sub">2017</div>
+      </a>
+      <a class="trophy-card ranking" href="https://www.hltv.org/news/19655/top-20-players-of-2016-fallen-2" target="_blank" rel="noopener">
+        <span class="trophy-tag">HLTV TOP 20</span>
+        <img class="trophy-img" src="https://www.hltv.org/img/static/event/trophies/2016/2.png" alt="#2 best player in 2016" loading="lazy">
+        <div class="trophy-name">#2 Player of the Year</div>
+        <div class="trophy-sub">2016</div>
+      </a>
+      <a class="trophy-card major" href="https://www.hltv.org/events/2062/esl-one-cologne-2016" target="_blank" rel="noopener">
+        <span class="trophy-tag">MAJOR</span>
+        <img class="trophy-img" src="https://www.hltv.org/img/static/event/trophies/2062.png" alt="ESL One Cologne 2016" loading="lazy">
+        <div class="trophy-name">ESL One Cologne</div>
+        <div class="trophy-sub">2016</div>
+      </a>
+      <a class="trophy-card" href="https://www.hltv.org/events/2130/esl-pro-league-season-3-finals" target="_blank" rel="noopener">
+        <img class="trophy-img" src="https://www.hltv.org/img/static/event/trophies/2130.png" alt="ESL Pro League Season 3 Finals" loading="lazy">
+        <div class="trophy-name">ESL Pro League S3</div>
+        <div class="trophy-sub">Finals · 2016</div>
+      </a>
+      <a class="trophy-card" href="https://www.hltv.org/events/1954/dreamhack-austin-2016" target="_blank" rel="noopener">
+        <img class="trophy-img" src="https://www.hltv.org/img/static/event/trophies/1954.png" alt="DreamHack Austin 2016" loading="lazy">
+        <div class="trophy-name">DreamHack Austin</div>
+        <div class="trophy-sub">2016</div>
+      </a>
+      <a class="trophy-card major" href="https://www.hltv.org/events/2027/mlg-columbus-2016" target="_blank" rel="noopener">
+        <span class="trophy-tag">MAJOR</span>
+        <img class="trophy-img" src="https://www.hltv.org/img/static/event/trophies/2027.png" alt="MLG Columbus 2016" loading="lazy">
+        <div class="trophy-name">MLG Columbus</div>
+        <div class="trophy-sub">2016</div>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- ============ CAREER ============ -->
 <section class="block" id="career">
   <div class="container">
     <div class="section-head">
       <div>
-        <span class="eyebrow">// Capítulo 03 — A linha do tempo</span>
+        <span class="eyebrow">// Capítulo 04 — A linha do tempo</span>
         <h2 class="h2" style="margin-top: 16px;">De 1.6 a CS2,<br>sem pular um round.</h2>
       </div>
       <p>
@@ -1105,6 +1324,7 @@
       <div class="footer-links">
         <a href="#countdown">Contagem</a>
         <a href="#stats">Números</a>
+        <a href="#trophies">Vitrine</a>
         <a href="#career">Carreira</a>
         <a href="#tribute">Compartilhar</a>
       </div>
